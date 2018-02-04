@@ -1,4 +1,4 @@
-
+	
 node {
     withCredentials([
       [$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS'],
@@ -11,9 +11,12 @@ node {
         }
         stage('Preparation') {
           git 'https://github.com/idanshahar/K8SCodeComponentsMeetup.git'
+          
         }
         stage('Build') {
+            
         app = docker.build("idanshahar/node-example","-f ./node/Dockerfile ./node")
+        
         }
         stage('Push') {
             withDockerRegistry([credentialsId: 'docker-hub-credentials']) {
@@ -23,7 +26,7 @@ node {
         }
         stage('Deploy') {
             sh """
-                helm
+                helm upgrade --install node-example -f node/charts/javascript/values.yaml ./node/charts/javascript --set image.repository=idanshahar/node-example,image.tag=${BUILD_NUMBER},service.type=LoadBalancer
             """
         }
     }
