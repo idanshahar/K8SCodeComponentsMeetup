@@ -1,0 +1,4 @@
+azure cli - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl/
+draft - https://github.com/Azure/draft/blob/master/docs/install.md
+helm - https://github.com/kubernetes/helm/blob/master/docs/install.md
