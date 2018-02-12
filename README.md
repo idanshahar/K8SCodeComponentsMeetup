@@ -3,7 +3,7 @@ Kubernetes Code Components Meetup
 
 Prerequisites
 ------------
-1. A Running Kubernetes Cluster
+1. A running Kubernetes Cluster
 2. Helm - [Installation Instructions](https://github.com/kubernetes/helm/blob/master/docs/install.md)
 3. Draft - [Installation Instructions](https://github.com/Azure/draft/blob/master/docs/install.md)
 4. kubectl - [Installation Instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
@@ -16,7 +16,9 @@ Nodeless Jenkins on Kubernetes
 
 ```
 # if this is the first time you are using helm, please uncomment the line below.
+
 # helm init
+
 helm install --name jenkins stable/jenkins
 ```
 ### Get Jenkins admin password
@@ -36,13 +38,17 @@ Go to "Manage Jenkins" -> "Configure System"
 3. Create a new Pipeline job and select the jenkins file from git
 4. Change kubernetes url to 10.0.0.1
 
-Go to "Credentials" -> "System" -> "Global credentials"
-1. Add your Dockerhub credentials
-2. Insert 'docker-hub-credentials' as the credentialls ID 
+Go to "Credentials" -> "System" -> "Global credentials" -> "Add Credentials"
+
+1. Choose "Global" Scope
+2. Add your Dockerhub credentials
+3. Insert 'docker-hub-credentials' as the credentialls ID 
 
 Containerize applications using Draft
 -------------------------------------
 ```
+# cd to your app root folder
+
 draft init #initialize draft
 
 draft create 
