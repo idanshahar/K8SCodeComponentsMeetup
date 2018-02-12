@@ -36,6 +36,9 @@ Go to "Manage Jenkins" -> "Configure System"
 3. Create a new Pipeline job and select the jenkins file from git
 4. Change kubernetes url to 10.0.0.1
 
+Go to "Credentials" -> "System" -> "Global credentials"
+1. Add your Dockerhub credentials
+2. Insert 'docker-hub-credentials' as the credentialls ID 
 
 Containerize applications using Draft
 -------------------------------------
