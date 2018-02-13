@@ -15,7 +15,7 @@ node {
         }
         stage('Build') {
             
-        app = docker.build("idanshahar/node-example","-f ./node/Dockerfile ./node")
+            app = docker.build("idanshahar/node-example","-f ./node/Dockerfile ./node")
         
         }
         stage('Push') {
