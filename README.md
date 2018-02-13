@@ -1,12 +1,16 @@
 Kubernetes Code Components Meetup
 =================================
+Presentation
+------------
+[Kubernetes Code Components](https://ptdrv.linkedin.com/dif0yfi)
 
 Prerequisites
 ------------
-1. A running Kubernetes Cluster
+1. A running Kubernetes Cluster - [AKS Instructions](https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-deploy-cluster)
 2. Helm - [Installation Instructions](https://github.com/kubernetes/helm/blob/master/docs/install.md)
 3. Draft - [Installation Instructions](https://github.com/Azure/draft/blob/master/docs/install.md)
 4. kubectl - [Installation Instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+5. Docker - [Installation Instructions](https://docs.docker.com/install/)
 
 
 
@@ -27,7 +31,13 @@ printf $(kubectl get secret --namespace default jenkins-jenkins -o jsonpath="{.d
 ```
 ### Build a Docker Image for Jenkins Slave on your own
 ```
+git clone https://github.com/idanshahar/K8SCodeComponentsMeetup.git
+
+cd KubernetesCodeComponents/jenkins
+
 docker build . --tag ${YOUR_DOCKER_REGISTRY}:${TAG}
+
+docker push ${YOUR_DOCKER_REGISTRY}:${TAG}
 ```
 
 ### Jenkins Configuration
@@ -48,6 +58,7 @@ Containerize applications using Draft
 -------------------------------------
 ```
 # cd to your app root folder
+cd node-draft
 
 draft init #initialize draft
 
