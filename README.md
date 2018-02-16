@@ -1,4 +1,4 @@
-dKubernetes Code Components Meetup
+Kubernetes Code Components Meetup
 =================================
 Presentation
 ------------
