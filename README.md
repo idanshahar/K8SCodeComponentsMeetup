@@ -24,6 +24,11 @@ Nodeless Jenkins on Kubernetes
 # helm init
 
 helm install --name jenkins stable/jenkins
+
+# Alternatively if you are having issues with the persistant volume class, you could still install jenkins from the chart provided in this repo:
+# helm install --name jenkins jenkins-0.13.2.tgz
+
+# the provided chart also Adds ACI plugin and Azure AD plugin (needs to be configured though)
 ```
 ### Get Jenkins admin password
 ```
