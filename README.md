@@ -18,6 +18,8 @@ Nodeless Jenkins on Kubernetes
 ------------------------------
 ### Set up Jenkins using helm
 
+[![asciicast](https://asciinema.org/a/OZqZ4kN3GeqSsj63DxhgiSgvD.png)](https://asciinema.org/a/OZqZ4kN3GeqSsj63DxhgiSgvD?size=small)
+
 ```
 # if this is the first time you are using helm, please uncomment the line below.
 
